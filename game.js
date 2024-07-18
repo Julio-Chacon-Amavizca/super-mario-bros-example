@@ -115,7 +115,7 @@ function update() {
 
         setTimeout(() => {
             this.scene.restart();
-        }, 2000);
+        }, 6000);
     }
 
 } // 3. Continuamente se ejecuta

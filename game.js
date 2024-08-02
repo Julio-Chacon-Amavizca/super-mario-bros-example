@@ -66,7 +66,7 @@ function create() {
     this.mario = this.physics.add.sprite(50, 100, 'mario')
         .setOrigin(0, 1)
         .setCollideWorldBounds(true)
-        .setGravityY(300);
+        .setGravityY(200);
 
     this.physics.world.setBounds(0, 0, 2000, config.height);
     this.physics.add.collider(this.mario, this.floor);
@@ -85,13 +85,16 @@ function update() {
     if (this.mario.isDead) {
         return;
     }
+    
     if (this.keys.left.isDown) {
         this.mario.anims.play('mario-walk', true);
         this.mario.x -= 2;
+        this.mario.flipX = true;
 
     } else if (this.keys.right.isDown) {
         this.mario.anims.play('mario-walk', true);
         this.mario.x += 2;
+        this.mario.flipX = false;
     } else {
         this.mario.anims.play('mario-idle', true);
     }

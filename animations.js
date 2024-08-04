@@ -34,6 +34,7 @@ export const createAnimations = (game) => {
   })
 
   game.anims.create({
+
     key: 'coin-spin',
     frames: game.anims.generateFrameNumbers('coin', { start: 0, end: 3 }),
     frameRate: 12,
